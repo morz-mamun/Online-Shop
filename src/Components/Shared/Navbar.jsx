@@ -3,14 +3,11 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/websitelogo.jpg"
 
 const Navbar = () => {
+  
     const navLinks = <>
-       
         <li><NavLink to="/">Home</NavLink></li> 
         <li><NavLink to="/addProduct">Add Product</NavLink></li> 
         <li><NavLink to="/myCart">My Cart</NavLink></li> 
-        
-
-        
     </>
 
     return (
@@ -40,7 +37,8 @@ const Navbar = () => {
     <Link to='/signin'>
     <button className="btn">Login</button>
     </Link>
-    <input type="checkbox" className="toggle" checked />
+    <button className="btn">LogOut</button>
+    <input type="checkbox" className="toggle"/>
   </div>
 </div>
     );

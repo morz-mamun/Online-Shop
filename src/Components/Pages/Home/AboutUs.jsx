@@ -11,7 +11,7 @@ const AboutUs = () => {
     
                 <h1 className='font-bold'>Where Innovation Meets Insight. <br /> Unleashing Tomorrows Tech Today </h1>
              </div>
-                <div className='flex items-center gap-5 py-5'>
+                <div className='flex flex-col-reverse md:flex-row items-center gap-5 py-5 p-5'>
                    <div className='flex-1'>
                    <p>Welcome to [TechNexa], your ultimate source for all things tech. Our passion for technology and innovation drives us to provide you with the latest news, reviews, and insights into the ever-evolving world of gadgets, software, and beyond. At [Your Technology Website Name], we believe that technology should be accessible to all, and our mission is to empower our readers with knowledge and understanding in this fast-paced digital age. </p>
                 <br />
