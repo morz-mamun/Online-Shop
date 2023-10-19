@@ -37,7 +37,7 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <Link>
+    <Link to='/signin'>
     <button className="btn">Login</button>
     </Link>
     <input type="checkbox" className="toggle" checked />
