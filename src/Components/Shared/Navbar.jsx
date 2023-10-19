@@ -7,6 +7,7 @@ const Navbar = () => {
        
         <li><NavLink to="/">Home</NavLink></li> 
         <li><NavLink to="/addProduct">Add Product</NavLink></li> 
+        <li><NavLink to="/myCart">My Cart</NavLink></li> 
         
 
         
@@ -36,7 +37,10 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Login</a>
+    <Link>
+    <button className="btn">Login</button>
+    </Link>
+    <input type="checkbox" className="toggle" checked />
   </div>
 </div>
     );

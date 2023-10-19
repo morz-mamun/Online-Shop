@@ -3,14 +3,17 @@ import PropTypes from 'prop-types';
 import Banner from './Banner';
 import OurBrands from './OurBrands';
 import AboutUs from './AboutUs';
+import AvailablePr from './AvailablePr';
 
 
 const Home = () => {
+
     return (
-        <div>
+        <div className=''>
          <Banner></Banner>
-         <AboutUs></AboutUs>
          <OurBrands></OurBrands>
+         <AboutUs></AboutUs>
+         <AvailablePr></AvailablePr>
         
         </div>
     );
