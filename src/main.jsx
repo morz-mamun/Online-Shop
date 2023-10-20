@@ -14,6 +14,8 @@ import Home from './Components/Pages/Home/Home';
 import AuthProvider from './Components/Provider/AuthProvider';
 import Login from './Components/Pages/LogIn/Login';
 import Register from './Components/Pages/Register/Register';
+import ShowProducts from './Components/PrivatePage/ShowProducts/ShowProducts';
+import Details from './Components/PrivatePage/ShowProducts/Details';
 
 const router = createBrowserRouter([
   {
@@ -22,7 +24,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        loader: () => fetch('brand.json'),
+        loader: () => fetch('/brand.json'),
         element: <Home></Home>
       },
       {
@@ -36,6 +38,16 @@ const router = createBrowserRouter([
       {
         path: '/signup',
         element: <Register></Register>
+      },
+      {
+        path: '/:brand_name',
+        element:<ShowProducts></ShowProducts>,
+        loader: ({params}) => fetch(`http://localhost:5000/products/${params.brand_name }`)
+        
+      },
+      {
+        path: '/details/:id',
+        element: <Details></Details>
       }
     ]
   },

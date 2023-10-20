@@ -5,8 +5,33 @@ import { Link } from 'react-router-dom';
 
 const AddProducts = () => {
 
-    const handleAddProduct = () => {
+    const handleAddProduct = (e) => {
+        e.preventDefault()
+        const form = e.target 
+        const image = form.image.value
+        const name = form.name.value
+        const brand_name = form.brand_name.value
+        const type = form.type.value
+        const price = form.price.value
+        const short_description = form.short_description.value
+        const rating = form.rating.value
 
+        const product = {image, name, brand_name, type, price, short_description, rating}
+
+        // send data to server site 
+        fetch('http://localhost:5000/products', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(product)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
+        form.reset()
+        
     }
     return (
         <div>
@@ -20,67 +45,68 @@ const AddProducts = () => {
                             <h1 className="text-xl md:text-5xl text-red-600 font-bold ">Add a New Product.</h1>
                         </div>
                         <div className="w-full text-white">
+
                             <form onSubmit={handleAddProduct}>
 
-                           <div className='flex gap-3 justify-between w-full'>
-                           <div className="form-control w-full">
-                                    <label className="label">
-                                        <span className="text-white ">Image</span>
-                                    </label>
-                                    <input type="text"
-                                        name="img"
-                                        placeholder="Image URL" className="input input-bordered w-full text-black" required />
-                            </div>
-                                <div className="form-control w-full ">
-                                    <label className="label">
-                                        <span className="text-white ">Name</span>
-                                    </label>
-                                    <input type="text"
-                                        name="name"
-                                        placeholder="Name" className="input input-bordered w-full text-black" required />
+                                <div className='flex gap-3 justify-between w-full'>
+                                    <div className="form-control w-full">
+                                        <label className="label">
+                                            <span className="text-white ">Image</span>
+                                        </label>
+                                        <input type="text"
+                                            name="image"
+                                            placeholder="Image URL" className="input input-bordered w-full text-black" required />
+                                    </div>
+                                    <div className="form-control w-full ">
+                                        <label className="label">
+                                            <span className="text-white ">Name</span>
+                                        </label>
+                                        <input type="text"
+                                            name="name"
+                                            placeholder="Name" className="input input-bordered w-full text-black" required />
+                                    </div>
                                 </div>
-                           </div>
 
                                 <div className='flex gap-3 justify-between w-full'>
-                                <div className="form-control w-full ">
-                                    <label className="label">
-                                        <span className="text-white ">Brand Name</span>
-                                    </label>
-                                    <input type="text"
-                                        name="brand_name"
-                                        placeholder="Brand Name" className="input input-bordered w-full text-black" required />
+                                    <div className="form-control w-full ">
+                                        <label className="label">
+                                            <span className="text-white ">Brand Name</span>
+                                        </label>
+                                        <input type="text"
+                                            name="brand_name"
+                                            placeholder="Brand Name" className="input input-bordered w-full text-black" required />
+                                    </div>
+                                    <div className="form-control w-full ">
+                                        <label className="label">
+                                            <span className="text-white ">Type</span>
+                                        </label>
+                                        <input type="option"
+                                            name="type"
+                                            placeholder="type" className="input input-bordered w-full text-black" required />
+                                    </div>
                                 </div>
-                                <div className="form-control w-full ">
-                                    <label className="label">
-                                        <span className="text-white ">Type</span>
-                                    </label>
-                                    <input type="option"
-                                        name="type"
-                                        placeholder="type" className="input input-bordered w-full text-black" required/>
-                                </div>
-                                </div>
-                                
+
 
                                 <div className='flex gap-3 justify-between w-full'>
-                                <div className="form-control w-full">
-                                    <label className="label">
-                                        <span className="text-white ">Price</span>
-                                    </label>
-                                    <input type="text"
-                                        name="price"
-                                        placeholder="Price" className="input input-bordered w-full text-black" required />
-                                </div>
-                                <div className="form-control w-full">
-                                    <label className="label">
-                                        <span className="text-white ">Short Description</span>
-                                    </label>
-                                    <input type="text"
-                                        name="short_description"
-                                        placeholder="Description" className="input input-bordered text-black" required />
-                                </div>
+                                    <div className="form-control w-full">
+                                        <label className="label">
+                                            <span className="text-white ">Price</span>
+                                        </label>
+                                        <input type="text"
+                                            name="price"
+                                            placeholder="Price" className="input input-bordered w-full text-black" required />
+                                    </div>
+                                    <div className="form-control w-full">
+                                        <label className="label">
+                                            <span className="text-white ">Short Description</span>
+                                        </label>
+                                        <input type="text"
+                                            name="short_description"
+                                            placeholder="Description" className="input input-bordered text-black" required />
+                                    </div>
                                 </div>
 
-                               
+
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="text-white ">Rating</span>

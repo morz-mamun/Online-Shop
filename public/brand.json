@@ -1,32 +1,32 @@
 [
     {
       "id": 1,
-      "brand_name": "APPLE",
+      "brand_name": "apple",
       "img": "https://i.ibb.co/j6grdcY/apple.jpg"
     },
     {
       "id": 2,
-      "brand_name": "SAMSUNG",
+      "brand_name": "samsung",
       "img": "https://i.ibb.co/HhSF32j/samsung-brand.png"
     },
     {
       "id": 3,
-      "brand_name": "XIAOMI",
+      "brand_name": "xiaomi",
       "img": "https://i.ibb.co/1XzMqHf/xiaomi-Brand.jpg"
     },
     {
       "id": 4,
-      "brand_name": "HP",
+      "brand_name": "hp",
       "img": "https://i.ibb.co/fkkzv4G/hp-brand.jpg"
     },
     {
       "id": 5,
-      "brand_name": "INTEL",
+      "brand_name": "intel",
       "img": "https://i.ibb.co/R071JW0/intelbrand.jpg"
     },
     {
       "id": 6,
-      "brand_name": "SONY",
+      "brand_name": "sony",
       "img": " https://i.ibb.co/L5MGgRx/sonybrand.jpg"
     }
   ]
