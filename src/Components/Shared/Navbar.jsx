@@ -62,7 +62,7 @@ const Navbar = () => {
           </ul>
         </div>
         <Link to="/">
-          <div className="rounded-full w-full">
+          <div className="rounded-full w-full border-2">
             <img className="rounded-full w-10" src={logo} alt="" />
           </div>
         </Link>

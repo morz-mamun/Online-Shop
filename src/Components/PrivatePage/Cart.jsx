@@ -25,7 +25,7 @@ const Cart = ({ cart, carts, setCarts }) => {
                     if(data.deletedCount > 0){
                         Swal.fire(
                             'Deleted!',
-                            'Your file has been deleted.',
+                            'Your Cart has been deleted.',
                             'success'
                           )
                           const remainingCarts = carts.filter(cart => cart._id !== _id ) 
