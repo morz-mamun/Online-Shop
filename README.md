@@ -1,8 +1,20 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Project Title
 
-Currently, two official plugins are available:
+TechNexa
+Unleashing Tomorrows Tech Today
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Website Features 
+
+- Full responsive navbar with active routes and toggle login and logout button. 
+- After user register or login private routes will show and see private details also.
+- User can add products to my cart which they want. Also can delete product from my cart if they want.
+- 
+- User can can see all product by choosing his favourite brand name after login.
+- When user register or login in website user will see their name and photo beside logout button.
+
+
+## 🔗 Website Live Link
+ [![Website live link](https://img.shields.io/badge/Event_Elegece-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://social-event-management-8b2c8.web.app/)
+

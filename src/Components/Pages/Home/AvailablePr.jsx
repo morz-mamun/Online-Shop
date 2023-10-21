@@ -3,10 +3,29 @@ import Marquee from "react-fast-marquee";
 
 const AvailablePr = () => {
     return (
-       <div >
-        <Marquee pauseOnHover className="border">
-        </Marquee>
-       </div>
+
+        <div className="hero mt-20">
+            <div className="hero-overlay bg-opacity-25"></div>
+            <div className='max-w-7xl mx-auto space-y-10'>
+                <div className='text-center space-y-5'>
+
+                    <h1 className='text-5xl font-bold border-b-4 border-yellow-300 w-fit mx-auto py-3' >Why Us</h1>
+
+                    <h1 className='font-bold'>Where Innovation Meets Insight. <br /> Unleashing Tomorrows Tech Today </h1>
+                </div>
+                <Marquee pauseOnHover className="border-2 h-32 bg-fuchsia-200 font-bold text-3xl">
+                    HOW WE DO IT
+                    Shown one to been and because would train were their advised the with the tell day classes to up room, and big with in arrives of been to company him the working able rationale
+                </Marquee>
+            </div>
+        </div>
+
+        //        <div className="max-w-7xl mx-auto ">
+
+
+        //         <h1 className="text-5xl text-center mb-10">Why Us</h1>
+        //        
+        //        </div>
     );
 };
 
