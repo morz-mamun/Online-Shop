@@ -1,15 +1,17 @@
 
 import PropTypes from 'prop-types';
-import { Link, useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { Link} from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const Brand = ({ brand }) => {
+    const {user} = useContext(AuthContext)
     const {brand_name, img} = brand
-    const navigate = useNavigate()
 
    
     return (
         
-        <Link to= {`/${brand_name}`}>
+        <Link to= {`/${brand_name}`}>    
             <div className='rounded-lg hover:bg-gray-600 rounded-t-md border-2 border-black border-s-fuchsia-300'>
             <div className=" w-full card-side shadow-transparent">
                 <div className="card-body">
@@ -19,6 +21,8 @@ const Brand = ({ brand }) => {
             </div>
         </div>
         </Link>
+
+    
         
     );
 };

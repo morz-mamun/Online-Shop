@@ -1,14 +1,16 @@
 import { Link, useNavigate } from 'react-router-dom';
 import login from '../../../assets/login.jpg'
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 import Swal from 'sweetalert2'
 
 const Register = () => {
   const { createUser } = useContext(AuthContext)
-  const navigate = useNavigate()
+  const [error, setError] = useState('')
 
+  const navigate = useNavigate()
+  
   const Toast = Swal.mixin({
     toast: true,
     position: 'top-end',
@@ -24,14 +26,25 @@ const Register = () => {
   const handleSignUp = (e) => {
     e.preventDefault()
     const form = e.target
-    const name = form.name.value
     const email = form.email.value
     const password = form.password.value
     console.log(email, password);
+
+    
+    if (!/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{5,}$/.test(password)) {
+      setError(<>
+        <div className=" toast-bottom">
+          <div className="alert bg-white">
+            <span className='text-red-600 font-bold'>Password should have at least one [A-Z], [a-b], [0-9] and special character.</span>
+          </div>
+        </div>
+      </>)
+      return
+    }
+
     // create user 
     createUser(email, password)
       .then(result => {
-        console.log(result.user);
         if(result.user){
           Toast.fire({
             icon: 'success',
@@ -40,8 +53,11 @@ const Register = () => {
         }
         form.reset()
       })
-      .catch(err => {
-        console.log(err.message);
+      .catch(() => {
+        Toast.fire({
+          icon: 'error',
+          title: 'User Signed Up Unsuccessful.'
+        })
       })
       navigate('/signin')
   }
@@ -88,6 +104,8 @@ const Register = () => {
                 <div className="form-control mt-6">
                   
                     <button type='submit' className="btn bg-red-600 w-full">Sign Up</button>
+
+                    <div className='from-control my-3'>{error}</div>
               
                 </div>
                 <div className='mb-5 text-right form-control mt-6'>
