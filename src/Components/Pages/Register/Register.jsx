@@ -2,15 +2,16 @@ import { Link, useNavigate } from 'react-router-dom';
 import login from '../../../assets/login.jpg'
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
-
+import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import Swal from 'sweetalert2'
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext)
+  const { createUser, userProfileUpdate } = useContext(AuthContext)
   const [error, setError] = useState('')
+  const [showPass, setShowPass] = useState(false)
 
   const navigate = useNavigate()
-  
+
   const Toast = Swal.mixin({
     toast: true,
     position: 'top-end',
@@ -26,11 +27,14 @@ const Register = () => {
   const handleSignUp = (e) => {
     e.preventDefault()
     const form = e.target
+    const name = form.name.value
+    const photo = form.photo.value
     const email = form.email.value
     const password = form.password.value
     console.log(email, password);
 
-    
+    setError('')
+
     if (!/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{5,}$/.test(password)) {
       setError(<>
         <div className=" toast-bottom">
@@ -44,14 +48,21 @@ const Register = () => {
 
     // create user 
     createUser(email, password)
-      .then(result => {
-        if(result.user){
+      .then(() => {
           Toast.fire({
             icon: 'success',
             title: 'User Signed Up successfully'
           })
-        }
-        form.reset()
+          userProfileUpdate(name, photo)
+          .then(()=> {
+            Toast.fire({
+              icon: 'success',
+              title: 'User profile update successfully'
+            })
+          })
+          .catch(err => {
+            console.log(err.message);
+          })
       })
       .catch(() => {
         Toast.fire({
@@ -59,7 +70,8 @@ const Register = () => {
           title: 'User Signed Up Unsuccessful.'
         })
       })
-      navigate('/signin')
+      form.reset()
+    navigate('/signin')
   }
   return (
     <div>
@@ -69,7 +81,7 @@ const Register = () => {
         <div className="bg-black bg-opacity-70 md:py-20 rounded-lg py-2 my-5">
           <div className="hero-content flex-col md:px-20 md:space-y-12">
             <div className="w-80 md:w-[550px] text-left">
-
+              <h1 className="text-xl md:text-5xl text-red-600 font-bold">Sign Up now!</h1>
               <h1 className="text-xl md:text-5xl text-red-600 font-bold">Sign Up now!</h1>
             </div>
             <div className="w-full text-white">
@@ -82,6 +94,12 @@ const Register = () => {
                     name="name"
                     placeholder="Name" className="input input-bordered w-full text-black" />
                 </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="text-xl font-bold">Photo URL</span>
+                  </label>
+                  <input type="text" name="photo" placeholder="photo URL" className="input input-bordered text-black" required />
+                </div>
                 <div className="form-control ">
                   <label className="label">
                     <span className="text-white font-bold">Email</span>
@@ -90,23 +108,29 @@ const Register = () => {
                     name="email"
                     placeholder="Email" className="input input-bordered w-full text-black" required />
                 </div>
-                <div className="form-control mt-5">
+                <div className="form-control mt-5 relative">
                   <label className="label">
                     <span className="text-white font-bold">Password</span>
                   </label>
-                  <input type="password"
+                  <input type={showPass ? 'text' : 'password'}
                     name="password"
                     placeholder="Password" className="input input-bordered text-black" required />
-                  <label className="label">
+                    <span className='absolute bottom-0 right-0 top-14 text-black text-xl' onClick={() => setShowPass(!showPass)}>
+                      {
+                        showPass ? <AiFillEyeInvisible></AiFillEyeInvisible> : <AiFillEye></AiFillEye>
+                      }
+
+                    </span>
+                  {/* <label className="label">
                     <a href="#" className="label-text-alt link link-hover text-white ">Forgot password?</a>
-                  </label>
+                  </label> */}
                 </div>
                 <div className="form-control mt-6">
-                  
-                    <button type='submit' className="btn bg-red-600 w-full">Sign Up</button>
 
-                    <div className='from-control my-3'>{error}</div>
-              
+                  <button type='submit' className="btn bg-red-600 w-full">Sign Up</button>
+
+                  <div className='from-control my-3'>{error}</div>
+
                 </div>
                 <div className='mb-5 text-right form-control mt-6'>
                   <p className='text-white '>Already have an account please <Link to="/signin"><span className='text-red-600 font-bold underline'>Sing in</span></Link> here.</p>
