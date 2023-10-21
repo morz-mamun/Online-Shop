@@ -16,5 +16,5 @@ Unleashing Tomorrows Tech Today
 
 
 ## 🔗 Website Live Link
- [![Website live link](https://img.shields.io/badge/Event_Elegece-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://social-event-management-8b2c8.web.app/)
+ [![Website live link](https://img.shields.io/badge/Event_Elegece-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://technexa-eef36.web.app/)
 
