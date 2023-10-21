@@ -16,7 +16,7 @@ const AuthProvider = ({ children }) => {
     // loader
     const [loading, setLoading] = useState(true)
 
-
+    
 
     // OnAuthStateChange 
     useEffect(() => {
@@ -64,7 +64,7 @@ const AuthProvider = ({ children }) => {
 
 
 
-    const userInfo = { user, googleLogIn, createUser, loginUser, logOutUser, loading, userProfileUpdate }
+    const userInfo = { user, googleLogIn, createUser, loginUser, logOutUser, loading, userProfileUpdate}
 
     return (
         <AuthContext.Provider value={userInfo}>

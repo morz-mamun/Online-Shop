@@ -19,7 +19,7 @@ const AddProducts = () => {
         const product = {image, name, brand_name, type, price, short_description, rating}
 
         // send data to server site 
-        fetch('https://technology-server-site-a5e4zw94v-mamuns-projects.vercel.app/products', {
+        fetch('https://technology-server-site-5mhknvoc1-mamuns-projects.vercel.app/products', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

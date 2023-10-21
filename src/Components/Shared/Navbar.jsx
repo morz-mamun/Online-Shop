@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from 'sweetalert2'
 
-const Navbar = () => {
+const Navbar = ({changeBackground}) => {
   const { user, logOutUser } = useContext(AuthContext)
 
   const Toast = Swal.mixin({
@@ -46,7 +46,7 @@ const Navbar = () => {
 
   return (
     <div className="bg-black bg-opacity-95">
-      <div className="navbar max-w-7xl mx-auto">
+      <div className="navbar">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -80,14 +80,14 @@ const Navbar = () => {
             </div>
           }
           {
-            user ? <button onClick={handleLogout} className=" rounded-xl text-xs md:btn md:btn-sm
-          bg-red-600 font-bold">Sign Out</button> :
+            user ? <button onClick={handleLogout} className=" rounded-xl text-xs bg-red-600 md:bt md:btn-sm
+           font-bold">Sign Out</button> :
               <Link to='/signin'>
                 <button className="
               bg-red-600 font-bold btn btn-sm">Sign In</button>
               </Link>
           }
-          <input type="checkbox" className="toggle" />
+          <input onClick={changeBackground} type="checkbox" placeholder="Dark" className="toggle" />
         </div>
       </div>
     </div>

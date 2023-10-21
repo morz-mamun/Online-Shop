@@ -1,13 +1,15 @@
 import about from '../../../assets/about.jpg'
-
+import bg from "../../../assets/brandbg.jpg"
 const AboutUs = () => {
     return (
-        <div className="hero my-20">
-             <div className="hero-overlay bg-opacity-25"></div>
+        <div className="hero my-20 text-white" style={{
+            backgroundImage: `url(${bg})`
+        }}>
+             <div className="hero-overlay bg-opacity-90"></div>
              <div className='max-w-7xl mx-auto space-y-10'>
              <div className='text-center space-y-5'>
              
-             <h1 className='text-5xl font-bold border-b-4 border-yellow-300 w-fit mx-auto py-3' >About Us</h1>
+             <h1 className='text-5xl font-bold border-b-4 border-yellow-300 w-fit mx-auto py-3 text-white' >About Us</h1>
     
                 <h1 className='font-bold'>Where Innovation Meets Insight. <br /> Unleashing Tomorrows Tech Today </h1>
              </div>

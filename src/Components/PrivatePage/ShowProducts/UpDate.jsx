@@ -29,7 +29,7 @@ const UpDate = () => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
                 // send data to server site 
-                fetch(`https://technology-server-site-a5e4zw94v-mamuns-projects.vercel.app/products/${brand_name}/${_id}`, {
+                fetch(`https://technology-server-site-5mhknvoc1-mamuns-projects.vercel.app/products/${brand_name}/${_id}`, {
                     method: "PUT",
                     headers: {
                         'content-type': 'application/json'

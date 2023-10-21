@@ -14,7 +14,7 @@ const Details = () => {
             denyButtonText: `Don't save`,
           }).then((result) => {
             if (result.isConfirmed) {
-                fetch('https://technology-server-site-a5e4zw94v-mamuns-projects.vercel.app/carts', {
+                fetch('https://technology-server-site-5mhknvoc1-mamuns-projects.vercel.app/carts', {
                     method: "POST",
                     headers: {
                         'content-type': 'application/json'

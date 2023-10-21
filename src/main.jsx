@@ -39,12 +39,12 @@ const router = createBrowserRouter([
       {
         path: '/update/:brand_name/:id',
         element: <UpDate></UpDate>,
-        loader: ({params}) => fetch(`https://technology-server-site-a5e4zw94v-mamuns-projects.vercel.app/products/${params.brand_name}/${params.id}`)
+        loader: ({params}) => fetch(`https://technology-server-site-5mhknvoc1-mamuns-projects.vercel.app/products/${params.brand_name}/${params.id}`)
       },
       {
         path: '/myCart',
         element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
-        loader: () => fetch('https://technology-server-site-a5e4zw94v-mamuns-projects.vercel.app/carts')
+        loader: () => fetch('https://technology-server-site-5mhknvoc1-mamuns-projects.vercel.app/carts')
       },
      
       {
@@ -58,13 +58,13 @@ const router = createBrowserRouter([
       {
         path: '/:brand_name',
         element:<PrivateRoute><ShowProducts></ShowProducts></PrivateRoute>,
-        loader: ({params}) => fetch(`https://technology-server-site-a5e4zw94v-mamuns-projects.vercel.app/products/${params.brand_name }`)
+        loader: ({params}) => fetch(`https://technology-server-site-5mhknvoc1-mamuns-projects.vercel.app/products/${params.brand_name }`)
         
       },
       {
         path: '/:brand_name/:id',
         element: <PrivateRoute><Details></Details></PrivateRoute>,
-        loader: ({params}) => fetch(`https://technology-server-site-a5e4zw94v-mamuns-projects.vercel.app/products/${params.brand_name}/${params.id}`)
+        loader: ({params}) => fetch(`https://technology-server-site-5mhknvoc1-mamuns-projects.vercel.app/products/${params.brand_name}/${params.id}`)
       }
     ]
   },
