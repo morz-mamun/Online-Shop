@@ -50,37 +50,37 @@ const Navbar = () => {
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" className="md:h-8 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M4 6h16M4 12h8m-8 6h16" /></svg>
             </label>
-            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow font-bold bg-base-100 rounded-box w-52 text-white">
+            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow font-bold bg-black rounded-box w-52 text-white">
               {navLinks}
             </ul>
           </div>
           <Link to="/">
             <div className="rounded-full w-full border-2">
-              <img className="rounded-full w-10" src={logo} alt="" />
+              <img className="rounded-full w-6 md:w-10" src={logo} alt="" />
             </div>
           </Link>
-          <a className="text-lg md:text-xl ml-2 font-bold border-b-4 border-yellow-300 text-white"><span className="text-red-600">Tech</span>Nexa</a>
+          <a className="md:text-xl ml-2 font-bold border-b-4 border-yellow-300 text-white"><span className="text-red-600">Tech</span>Nexa</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 space-x-10 font-bold text-white">
             { navLinks}
           </ul>
         </div>
-        <div className="navbar-end space-x-2">
+        <div className="navbar-end md:space-x-2">
 
           {
             user && 
             <div className="flex gap-2 items-center">
-              <div className="w-7, h-6 md:w-10 md:h-10 rounded-full">
+              <div className="w-2, h-6 md:w-10 md:h-10 rounded-full">
               <img className="w-full h-full rounded-full" src={user.photoURL} alt="" />
               </div>
               <h1 className="text-xs text-white">{user.displayName}</h1>
             </div>
           }
           {
-            user ? <button onClick={handleLogout} className="btn btn-sm
+            user ? <button onClick={handleLogout} className=" rounded-xl text-xs md:btn md:btn-sm
           bg-red-600 font-bold">Sign Out</button> :
               <Link to='/signin'>
                 <button className="

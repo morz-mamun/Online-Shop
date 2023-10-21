@@ -19,13 +19,6 @@ const AvailablePr = () => {
                 </Marquee>
             </div>
         </div>
-
-        //        <div className="max-w-7xl mx-auto ">
-
-
-        //         <h1 className="text-5xl text-center mb-10">Why Us</h1>
-        //        
-        //        </div>
     );
 };
 

@@ -14,7 +14,7 @@ const Details = () => {
             denyButtonText: `Don't save`,
           }).then((result) => {
             if (result.isConfirmed) {
-                fetch('http://localhost:5000/carts', {
+                fetch('https://technology-server-site-a5e4zw94v-mamuns-projects.vercel.app/carts', {
                     method: "POST",
                     headers: {
                         'content-type': 'application/json'
